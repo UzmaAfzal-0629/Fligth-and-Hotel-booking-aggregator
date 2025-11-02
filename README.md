@@ -248,8 +248,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Author
 
 **Amit Kumar**
-- GitHub: [@Amit-887](https://github.com/Amit-887)
-- Project: [Flight and Hotel Aggregator](https://github.com/Amit-887/Flight-and-Hotel-Aggregator-)
+- GitHub: [@UzmaAfzal-0629](https://github.com/UzmaAfzal-0629)
+- Project: [Flight and Hotel Aggregator](https://github.com/UzmaAfzal-0629/Fligth-and-Hotel-booking-aggregator)
 
 ## Acknowledgments
 
