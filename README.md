@@ -51,7 +51,7 @@ A comprehensive MERN stack application for flight and hotel booking with real-ti
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Amit-887/Flight-and-Hotel-Aggregator-.git
+   git clone https://github.com/UzmaAfzal-0629/Flight-and-Hotel-Aggregator-.git
    cd Flight-and-Hotel-Aggregator-
    ```
 
