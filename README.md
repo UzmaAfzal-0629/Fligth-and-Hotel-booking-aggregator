@@ -1,70 +1,259 @@
-# Getting Started with Create React App
+# TravelEase - Flight and Hotel Booking Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A comprehensive MERN stack application for flight and hotel booking with real-time search capabilities and user management.
+
+## Features
+
+### Backend Features
+- **Authentication System**: JWT-based secure authentication
+- **MongoDB Integration**: Mongoose ODM for data management
+- **RESTful API**: Complete API endpoints for all operations
+- **Amadeus API Integration**: Real-time flight data
+- **Hotel Management**: CRUD operations for hotel bookings
+- **Booking System**: Complete booking management with status tracking
+- **Security**: Helmet, CORS, and rate limiting middleware
+
+### Frontend Features
+- **Modern React**: React 18 with hooks and context API
+- **Responsive Design**: Mobile-first approach with custom CSS
+- **Authentication**: Secure user registration and login
+- **Flight Search**: Advanced search with autocomplete
+- **Hotel Search**: Filtering and booking capabilities
+- **User Dashboard**: Booking history and profile management
+- **Professional UI**: Custom CSS styling (no external dependencies)
+
+## Technology Stack
+
+### Backend
+- **Runtime**: Node.js
+- **Framework**: Express.js
+- **Database**: MongoDB with Mongoose
+- **Authentication**: JWT (JSON Web Tokens)
+- **Security**: Helmet, CORS, Express Rate Limit
+- **API Integration**: Amadeus Travel API
+
+### Frontend
+- **Framework**: React.js 18
+- **Routing**: React Router DOM
+- **Styling**: Custom CSS (Tailwind-independent)
+- **Icons**: Lucide React
+- **HTTP Client**: Axios
+- **State Management**: React Context API
+
+## Installation
+
+### Prerequisites
+- Node.js (v14 or higher)
+- MongoDB (local or Atlas)
+- Amadeus API credentials
+
+### Setup Instructions
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Amit-887/Flight-and-Hotel-Aggregator-.git
+   cd Flight-and-Hotel-Aggregator-
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm run setup
+   ```
+
+3. **Environment Configuration**
+   Create a `.env` file in the root directory:
+   ```env
+   PORT=5001
+   MONGODB_URI=mongodb://localhost:27017/travelease
+   JWT_SECRET=your_jwt_secret_key
+   AMADEUS_CLIENT_ID=your_amadeus_client_id
+   AMADEUS_CLIENT_SECRET=your_amadeus_client_secret
+   ```
+
+4. **Seed Database** (Optional)
+   ```bash
+   npm run seed
+   ```
+
+5. **Start Development Server**
+   ```bash
+   npm run dev:full
+   ```
 
 ## Available Scripts
 
-In the project directory, you can run:
+### Root Directory
+- `npm run setup` - Install all dependencies (backend + frontend)
+- `npm run dev:full` - Start both backend and frontend servers
+- `npm run server` - Start backend server only
+- `npm run client` - Start frontend server only
+- `npm run build` - Build frontend for production
+- `npm run seed` - Populate database with sample data
 
-### `npm start`
+### Client Directory
+- `npm start` - Start React development server
+- `npm run build` - Build for production
+- `npm test` - Run tests
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## API Endpoints
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Authentication
+- `POST /api/auth/register` - User registration
+- `POST /api/auth/login` - User login
+- `GET /api/auth/me` - Get current user
 
-### `npm test`
+### Flights
+- `GET /api/flights/search` - Search flights
+- `GET /api/flights/locations` - Get airport locations
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Hotels
+- `GET /api/hotels` - Get all hotels
+- `GET /api/hotels/:id` - Get hotel by ID
+- `POST /api/hotels` - Create new hotel (admin)
 
-### `npm run build`
+### Bookings
+- `GET /api/bookings` - Get user bookings
+- `POST /api/bookings` - Create new booking
+- `PUT /api/bookings/:id` - Update booking
+- `DELETE /api/bookings/:id` - Cancel booking
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Application Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+├── client/                 # React frontend
+│   ├── src/
+│   │   ├── components/    # Reusable components
+│   │   ├── pages/         # Page components
+│   │   ├── context/       # React context
+│   │   ├── utils/         # Utility functions
+│   │   └── ...
+├── models/                # MongoDB models
+├── routes/                # Express routes
+├── middleware/            # Custom middleware
+├── utils/                 # Backend utilities
+├── server.js              # Main server file
+└── package.json           # Dependencies
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Key Features
 
-### `npm run eject`
+### User Authentication
+- Secure registration and login
+- JWT token-based authentication
+- Protected routes and middleware
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Flight Search
+- Real-time flight data from Amadeus API
+- Airport autocomplete functionality
+- Advanced search filters
+- Multiple travel classes support
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Hotel Booking
+- Comprehensive hotel listings
+- Advanced filtering options
+- Location-based search
+- Rating and price filters
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### User Dashboard
+- Booking history management
+- Profile information
+- Booking status tracking
+- Responsive design
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Security Features
 
-## Learn More
+- **JWT Authentication**: Secure token-based authentication
+- **Password Hashing**: bcryptjs for password security
+- **Rate Limiting**: Prevent API abuse
+- **CORS Protection**: Cross-origin resource sharing
+- **Helmet**: Security headers
+- **Input Validation**: Server-side validation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Custom CSS Implementation
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project uses **custom CSS** instead of Tailwind CSS, providing:
+- **Zero Dependencies**: No external CSS frameworks
+- **Custom Design System**: Consistent styling across components
+- **Responsive Design**: Mobile-first approach
+- **Performance**: Optimized CSS without unused styles
+- **Maintainability**: Organized CSS structure
 
-### Code Splitting
+## Database Models
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### User Model
+```javascript
+{
+  name: String,
+  email: String (unique),
+  password: String (hashed),
+  phone: String,
+  createdAt: Date
+}
+```
 
-### Analyzing the Bundle Size
+### Hotel Model
+```javascript
+{
+  name: String,
+  location: String,
+  description: String,
+  price: Number,
+  rating: Number,
+  amenities: [String],
+  images: [String]
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Booking Model
+```javascript
+{
+  user: ObjectId,
+  type: String (flight/hotel),
+  details: Object,
+  status: String,
+  totalAmount: Number,
+  createdAt: Date
+}
+```
 
-### Making a Progressive Web App
+## Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Production Build
+```bash
+npm run build
+```
 
-### Advanced Configuration
+### Environment Variables for Production
+```env
+NODE_ENV=production
+PORT=5001
+MONGODB_URI=your_production_mongodb_uri
+JWT_SECRET=your_production_jwt_secret
+AMADEUS_CLIENT_ID=your_amadeus_client_id
+AMADEUS_CLIENT_SECRET=your_amadeus_client_secret
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Contributing
 
-### Deployment
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## License
 
-### `npm run build` fails to minify
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Author
+
+**Amit Kumar**
+- GitHub: [@Amit-887](https://github.com/Amit-887)
+- Project: [Flight and Hotel Aggregator](https://github.com/Amit-887/Flight-and-Hotel-Aggregator-)
+
+## Acknowledgments
+
+- Amadeus Travel API for flight data
+- React.js community for excellent documentation
+- MongoDB for robust database solutions
+- Express.js for the powerful backend framework
